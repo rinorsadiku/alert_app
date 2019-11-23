@@ -20,11 +20,7 @@ const Signin = () => {
 
 					<div className="form__group">
 						<label className="form__label">Password</label>
-						<input
-							className="form__input"
-							placeholder="Your Password"
-							type="text"
-						/>
+						<input className="form__input" type="password" />
 					</div>
 
 					<div className="form__group">

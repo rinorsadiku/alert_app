@@ -30,22 +30,14 @@ const Signup = () => {
 
 					<div className="form__group">
 						<label className="form__label">Password</label>
-						<input
-							className="form__input"
-							placeholder="Your Password"
-							type="text"
-						/>
+						<input className="form__input" type="password" />
 					</div>
 
 					<div className="form__group">
 						<label className="form__label">
 							Password Confirmation
 						</label>
-						<input
-							className="form__input"
-							placeholder="Confirm Your Password"
-							type="text"
-						/>
+						<input className="form__input" type="password" />
 					</div>
 
 					<div className="form__group">
@@ -53,7 +45,7 @@ const Signup = () => {
 					</div>
 				</form>
 
-				<Link to="/singup" className="btn--link">
+				<Link to="/signin" className="btn--link">
 					Already have an account? Log in
 				</Link>
 			</div>
