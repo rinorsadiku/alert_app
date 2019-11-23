@@ -1,0 +1,142 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700|Poppins:400,500&display=swap');
+
+/* VARIABLES */
+:root {
+	--color-primary: #7924b3;
+	--font-color-primary: #116dbd;
+	--font-color-secondary: #222222;
+	--color-grey-dark-1: #ccc;
+	--color-grey-dark-2: #777;
+	--color-teal: #5dc9b6;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	color: var(--font-color-primary);
+	font-weight: 400;
+	line-height: 1.6;
+}
+
+.container--auth {
+	max-width: 100vw;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 0.8fr 1fr;
+	grid-template-rows: 1fr;
+}
+
+.container--app {
+	height: 100%;
+	display: grid;
+	grid-template-rows: 20vh 80vh;
+	grid-template-columns: 1fr;
+}
+
+.auth__img {
+	background-size: cover;
+	background-position: center;
+}
+
+.auth__img--1 {
+	background-image: linear-gradient(
+			to right,
+			rgba(121, 36, 179, 0.3),
+			rgba(121, 36, 179, 0.3)
+		),
+		url('./singin.jpg');
+}
+
+.auth__img--2 {
+	background-image: linear-gradient(
+			to right,
+			rgba(121, 36, 179, 0.3),
+			rgba(121, 36, 179, 0.3)
+		),
+		url('./singup.jpg');
+}
+
+/* SIGN IN */
+
+.sign {
+	justify-self: center;
+	align-self: center;
+	width: 60%;
+}
+
+.sign__title {
+	font-size: 2.5rem;
+	font-weight: 400;
+	margin-bottom: 2rem;
+}
+
+.form {
+}
+
+.form__group {
+	margin-bottom: 2rem;
+	width: 80%;
+}
+
+.form__label {
+	display: block;
+	font-size: 1rem;
+	text-transform: uppercase;
+	color: var(--color-grey-dark-2);
+}
+
+.form__input {
+	padding: 0.7rem 1rem;
+	width: 100%;
+	font-family: 'Poppins', sans-serif;
+	border: 1px solid #ccc;
+	border-radius: 0.7rem;
+}
+
+.btn--form {
+	width: 100%;
+	font-family: 'Poppins', sans-serif;
+
+	border: none;
+	border-radius: 3px;
+	padding: 1rem 0;
+	color: #fff;
+	text-transform: uppercase;
+	background-color: var(--color-primary);
+}
+
+.btn--link {
+	width: 80%;
+	display: flex;
+	padding: 1rem 0;
+	background-color: var(--color-grey-dark-1);
+	color: var(--color-primary);
+	text-decoration: none;
+
+	align-items: center;
+	font-size: 1.4rem;
+	justify-content: center;
+	font-family: 'Merriweather', sans-serif;
+}
+
+.header {
+	padding: 6rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.content {
+}
