@@ -1,44 +1,68 @@
 import React from 'react';
+import requireAuth from '../requireAuth';
 import { Link } from 'react-router-dom';
 
-const Dashboard = () => {
-	return (
-		<div className="container--app">
-			<div className="header">
-				<h1 className="header__title">Alert App</h1>
-				<div className="header__details">
-					<p>Rinor Sadiku</p>
-					<div className="header__creds">RS</div>
-				</div>
-			</div>
-			<div className="content">
-				<table>
-					<tr>
-						<th>Event</th>
-						<th>Method</th>
-						<th>Value</th>
-						<th>Created</th>
-					</tr>
-					<tr>
-						<td>Jill</td>
-						<td>Smith</td>
-						<td>50</td>
-						<td>50</td>
-					</tr>
-					<tr>
-						<td>Eve</td>
-						<td>Jackson</td>
-						<td>94</td>
-						<td>94</td>
-					</tr>
-				</table>
+import * as actions from '../../actions';
+import { connect } from 'react-redux';
+import DashboardContainer from './DashboardContainer';
 
-				<Link to="/alerts/new" className="content__new">
-					+
-				</Link>
-			</div>
-		</div>
-	);
+class Dashboard extends React.Component {
+	async componentDidMount() {
+		await this.props.fetchAlerts();
+	}
+
+	renderAlerts = () => {
+		return this.props.alerts.map(alert => {
+			console.log(alert);
+			return (
+				<tr>
+					<td>
+						{/* Here would be the event fetched from the "alert_event_id" */}
+					</td>
+					<td>
+						{/* Here would be the method fetched from the "alert_method_id" */}
+					</td>
+					<td>
+						{/* Here would be the email of the user who has created the alert */}
+					</td>
+					<td>
+						{/* And right here would be the date of creation, probably formatted nicely */}
+					</td>
+				</tr>
+			);
+		});
+	};
+
+	render() {
+		return (
+			<DashboardContainer>
+				<div className="content">
+					<table>
+						<thead>
+							<tr>
+								<th>Event</th>
+								<th>Method</th>
+								<th>Value</th>
+								<th>Created</th>
+							</tr>
+						</thead>
+						<tbody>{this.renderAlerts()}</tbody>
+					</table>
+
+					<Link to="/alerts/new" className="content__new">
+						+
+					</Link>
+				</div>
+			</DashboardContainer>
+		);
+	}
+}
+
+const mapStateToProps = ({ user, alerts }) => {
+	return {
+		user,
+		alerts
+	};
 };
 
-export default Dashboard;
+export default connect(mapStateToProps, actions)(requireAuth(Dashboard));

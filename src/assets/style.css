@@ -83,9 +83,6 @@ body {
 	margin-bottom: 2rem;
 }
 
-.form {
-}
-
 .form__group {
 	margin-bottom: 2rem;
 	width: 80%;
@@ -176,6 +173,12 @@ body {
 	padding: 10rem 20rem;
 }
 
+.content--small {
+	width: 60% !important;
+	justify-self: center !important;
+	align-self: center !important;
+}
+
 .content__new {
 	font-family: Arial, Helvetica, sans-serif;
 	position: fixed;
@@ -223,4 +226,11 @@ th {
 
 tr {
 	background-color: #fff;
+}
+
+.error {
+	color: rgb(224, 70, 70);
+	font-size: 1.2rem;
+	margin-top: -1rem;
+	margin-bottom: 1rem;
 }
